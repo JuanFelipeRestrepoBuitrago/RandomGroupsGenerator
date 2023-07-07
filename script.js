@@ -4,6 +4,25 @@
  * @author Juan Felipe Restrepo Buitrago
  * */
 
+// Test
+function test() {
+    let group = new RandomGroupGenerator(3);
+    group.addPerson("Bob and Alice");
+    group.addPerson("John and Jane");
+    group.addPerson("Jack and Jill");
+    group.addPerson("Bob and Alice");
+    group.addPerson("John");
+    group.addPerson("Jane");
+    group.addPerson("Jack");
+
+    countPeople(group);
+    addRemove(group);
+    console.log(group.generateGroups());
+    for (let i = 0; i < group.groups.length; i++) {
+        console.log("Group " + String(i + 1)+ ": " + group.countPeople(group.groups[i]));
+    }
+}
+
 /**
  * Class to generate random groups of people from an array of people
  *
@@ -138,60 +157,25 @@ class RandomGroupGenerator {
                 numberPeople ++;
             }
         }
-        counter = 0;
         // Add the remaining single people to the groups
         while (singlePeople.length > 0) {
+            // Get a random group
+            let randomGroup = this.groups[Math.floor(Math.random() * this.groups.length)];
+            // If the number of people in the group is greater than the number of people for each group, then get another random group
+            if (this.countPeople(randomGroup) > groupsSize) {
+                continue;
+            }
             // Get a random single person
             let randomSinglePerson = singlePeople[Math.floor(Math.random() * singlePeople.length)];
             // Add the single person to the group
-            this.groups[counter].push(randomSinglePerson);
+            randomGroup.push(randomSinglePerson);
             // Remove the single person from the single people array
             singlePeople.splice(singlePeople.indexOf(randomSinglePerson), 1);
-            // Increase the counter variable, if it is equal to the number of groups, then reset it to 0
-            if (counter === this.groups.length - 1) {
-                counter = 0;
-            } else {
-                counter++;
-            }
         }
 
         // Return the groups array
         return this.groups;
     }
-}
-
-// Test
-function test() {
-    let group = new RandomGroupGenerator(6);
-    group.addPerson("Bob and Alice");
-    group.addPerson("John and Jane");
-    group.addPerson("Jack and Jill");
-    group.addPerson("Bob and Alice");
-    group.addPerson("John and Jane");
-    group.addPerson("Jane");
-    group.addPerson("Jill");
-    group.addPerson("Bob");
-    group.addPerson("John");
-    group.addPerson("Jack");
-    group.addPerson("Alice");
-    group.addPerson("Jane");
-    group.addPerson("Jill");
-    group.addPerson("Bob");
-    group.addPerson("John");
-    group.addPerson("Jack");
-    group.addPerson("Alice");
-    group.addPerson("Jane");
-    group.addPerson("Jill");
-    group.addPerson("Bob");
-    group.addPerson("John");
-    // addRemove(group);
-    countPeople(group);
-    console.log(group.generateGroups());
-    for (let i = 0; i < group.groups.length; i++) {
-        console.log("Group " + String(i + 1)+ ": " + group.countPeople(group.groups[i]));
-    }
-
-
 }
 
 // Add and remove people methods
