@@ -1,0 +1,31 @@
+:root {
+    --background-color: #FFEDE1;
+    --text-color: #0E1C36;
+    --primary-background: #558C8C;
+    --primary-text: #FFFFFF;
+    --text-input-field: #DBCBC0;
+    --text-input-placeholder: #797272;
+    --sm-xl: 14px;
+    --sm: 16px;
+    --md: 20px;
+    --lg: 24px;
+}
+body {
+    font-family: 'Adamina', serif
+}
+
+.grande {
+    font-size: var(--lg);
+}
+
+.medio {
+    font-size: var(--md);
+}
+
+.peque {
+    font-size: var(--sm);
+}
+
+.peque-xl {
+    font-size: var(--sm-xl);
+}
