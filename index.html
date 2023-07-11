@@ -39,11 +39,37 @@
     <section class="main">
         <div class="container">
             <div class="text-container">
-
+                <h1>Generate Random Groups</h1>
+                <p>This is a random group generator. It was created specially for Neocatechumenal Way people in order to distribute the preparation groups. Write the list of participants and the number of groups to generate</p>
             </div>
+
+            <div class="content-container">
+                <fieldset class="participants">
+                    <legend>Participants</legend>
+                    <div class="participant">
+                        <p>Participant</p>
+                        <button class="btn btn-delete" value="Participant">
+                            <img src="https://imgur.com/zwmMngS.png" alt="X">
+                        </button>
+                    </div>
+                    <input type="text" class="add-participant">
+                </fieldset>
+                <p class="specifications">Separate each person with a comma and couples must contain the word "and" in the middle of the names</p>
+
+                <fieldset class="groups-number">
+                    <legend>Groups Number</legend>
+                    <input type="number" class="groups-number-input">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-generate">Generate</button>
         </div>
     </section>
 
     <footer class="footer"></footer>
+
+    <!-- Scripts Link -->
 </body>
 </html>
