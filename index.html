@@ -68,7 +68,23 @@
         </div>
     </section>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <form action="https://formsubmit.co/pipaso903@gmail.com" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Type your name" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Type your email" required>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message" required></textarea>
+            <input type="hidden" name="_next" value="http://localhost:63342/GroupsGenerator/">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="btn btn-submit">Send</button>
+        </form>
+
+        <div class="copyrigth">
+            <p><a href="https://github.com/JuanFelipeRestrepoBuitrago">Created by Juan Felipe Restrepo</a> - 2023. RandomGroupGenerator ©</p>
+        </div>
+    </footer>
 
     <!-- Scripts Link -->
 </body>
