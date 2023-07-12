@@ -1,26 +1,29 @@
 :root {
-    --background-color: #FFEDE1;
-    --text-color: #0E1C36;
-    --text-color-hover: #436087;
-    --primary-background: #7A4419;
-    --primary-background-hover: #A55F2A;
-    --primary-text: #FFFFFF;
+    --white: #FFFFFF;
+    --black: #000000;
+    --black-hover: #424242;
+    --light: #FFEDE1;
+    --light-hover: #d2b8a8;
+    --primary-color: #C57B57;
+    --primary-color-hover: #a4603d;
+    --secondary-color: #0E1C36;
+    --secondary-color-hover: #243150;
     --text-input-field: #DBCBC0;
-    --text-input-placeholder: #797272;
-    --sm-xl: 14px;
-    --sm: 16px;
-    --md: 20px;
-    --lg: 24px;
+    --input-placeholder: #ADA4A4;
+    --sm-xl: 12px;
+    --sm: 14px;
+    --md: 18px;
+    --lg: 22px;
 }
 
 body {
     font-family: 'Adamina', serif;
     margin: 0;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
 }
 
 .navbar {
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     border-bottom: 1px solid var(--text-input-field);
     display: flex;
     justify-content: space-between;
@@ -40,7 +43,7 @@ body {
 
 .logo-container p {
     margin: 0;
-    color: var(--text-color);
+    color: var(--light);
     font-weight: bold;
     font-size: var(--md);
 }
@@ -65,7 +68,7 @@ body {
 
 .dropdown span {
     margin: 0;
-    color: var(--text-color);
+    color: var(--light);
     font-size: var(--sm-xl);
     font-weight: bold;
     justify-content: center;
@@ -77,12 +80,12 @@ body {
 }
 
 .dropdown:hover span {
-    color: var(--text-color-hover);
+    color: var(--light-hover);
 }
 
 .dropdown-content {
     display: none;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     border: 1px solid var(--text-input-field);
     border-radius: 8px;
     position: absolute;
@@ -99,22 +102,18 @@ body {
 }
 
 .dropdown-content .text {
-    color: var(--text-color);
+    color: var(--light-hover);
     margin-top: 8px;
     font-size: var(--sm);
 }
 
 #dropdown-items {
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     border: 2px solid var(--text-input-field);
     padding: 10px 16px 10px 4px;
     border-radius: 4px;
-    color: var(--text-color);
+    color: var(--light-hover);
     font-size: var(--sm-xl);
-    background-image: url(data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>);
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 5px;
 }
 
 #dropdown-items:hover {
