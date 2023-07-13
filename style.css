@@ -16,13 +16,19 @@
 }
 
 body {
-    font-family: 'Adamina', serif;
+    font-family: 'Fira Sans', sans-serif;
     margin: 0;
     background-color: var(--primary-color);
 }
 
 a {
     text-decoration: none;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
 }
 
 .navbar {
@@ -41,14 +47,13 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 
 .logo-p {
     margin: 0;
     color: var(--light);
     font-weight: bold;
-    font-size: var(--md);
+    font-size: var(--lg);
 }
 
 .logo-p:hover {
@@ -69,20 +74,30 @@ a {
     position: relative;
 }
 
-.language > .dropdown-click {
+.language > .dropdown-link {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
     height: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
 }
 
-.language > .dropdown-click img {
+.language > .dropdown-link:hover {
+    border-color: var(--light-hover);
+}
+
+.language > .dropdown-link img {
     width: 30px;
     height: 30px;
 }
 
-.language > .dropdown-click span {
+.language > .dropdown-link span {
     margin: 0;
     color: var(--light);
     font-size: var(--sm);
@@ -95,7 +110,9 @@ a {
 }
 
 .dropdown-content {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     background-color: var(--secondary-color);
     border: 1px solid var(--light);
     border-radius: 8px;
@@ -104,12 +121,8 @@ a {
     z-index: 1;
     height: 120px;
     width: 100px;
-}
-
-.language:focus-within .dropdown-content, .dropdown-content:hover {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    top: 46px;
+    right: -7px;
 }
 
 .dropdown-content .text {
@@ -126,6 +139,8 @@ a {
     border-radius: 4px;
     color: var(--light);
     font-size: var(--sm-xl);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #change-language:focus {
@@ -134,22 +149,13 @@ a {
 
 @media (max-width: 768px) {
     .logo-p {
-        font-size: var(--sm);
+        font-size: var(--md);
     }
 }
 
 @media (max-width: 576px) {
     .navbar {
         padding: 8px 16px;
-    }
-
-    .dropdown-content {
-        height: 100px;
-        width: 80px;
-    }
-
-    .language:focus-within .dropdown-content, .dropdown-content:hover {
-        gap: 24px;
     }
 
     #change-language {
@@ -161,11 +167,13 @@ a {
 @media (max-width: 425px) {
     .dropdown-content {
         right: -10px;
+        height: 100px;
+        width: 80px;
     }
     .language {
         margin: 0;
     }
-    .language > .dropdown-click span {
+    .language > .dropdown-link span {
         display: none;
     }
 
