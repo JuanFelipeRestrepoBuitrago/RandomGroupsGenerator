@@ -23,6 +23,7 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .hidden {
@@ -47,6 +48,7 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .logo-p {
@@ -56,13 +58,17 @@ a {
     font-size: var(--lg);
 }
 
-.logo-p:hover {
+.logo-container:hover .logo-p {
     color: var(--light-hover);
 }
 
 .logo {
     width: 30px;
     height: 30px;
+}
+
+.logo-container:hover .logo {
+    filter: brightness(0.8);
 }
 
 .language {
@@ -88,13 +94,17 @@ a {
     background-color: var(--secondary-color);
 }
 
-.language > .dropdown-link:hover {
+.language:hover > .dropdown-link {
     border-color: var(--light-hover);
 }
 
 .language > .dropdown-link img {
     width: 30px;
     height: 30px;
+}
+
+.language:hover > .dropdown-link img {
+    filter: brightness(0.8);
 }
 
 .language > .dropdown-link span {
@@ -105,7 +115,7 @@ a {
     justify-content: center;
 }
 
-.dropdown:hover span {
+.language:hover > .dropdown-link span {
     color: var(--light-hover);
 }
 
