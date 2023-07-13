@@ -40,19 +40,16 @@
         <div class="container">
             <div class="text-container">
                 <h1>Generate Random Groups</h1>
-                <p>This is a random group generator. It was created specially for Neocatechumenal Way people in order to distribute the preparation groups. Write the list of participants and the number of groups to generate</p>
+                <p class="desktop-p">This is a random group generator. It was created specially for Neocatechumenal Way people in order to distribute the preparation groups. Write the list of participants and the number of groups to generate</p>
+                <p class="mobile-p">Create random groups</p>
             </div>
 
             <div class="content-container">
                 <fieldset class="participants">
-                    <legend>Participants</legend>
-                    <div class="participant">
-                        <p>Participant</p>
-                        <button class="btn btn-delete" value="Participant">
-                            <img src="https://imgur.com/zwmMngS.png" alt="X">
-                        </button>
-                    </div>
-                    <input type="text" class="add-participant">
+                    <legend>
+                        <label for="add-participants">Participants</label>
+                    </legend>
+                    <textarea name="add-participants" id="add-participants" cols="70" rows="10" placeholder="Type the participants. Ej: Pepito, Fulanito and Fulanita"></textarea>
                 </fieldset>
                 <p class="specifications">Separate each person with a comma and couples must contain the word "and" in the middle of the names</p>
 
