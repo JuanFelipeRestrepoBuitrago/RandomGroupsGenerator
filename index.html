@@ -51,11 +51,17 @@
                     </legend>
                     <textarea name="add-participants" id="add-participants" cols="45" rows="2" placeholder="Type the participants. Ej: Pepito,Fulanito and Fulanita,...,Perano"></textarea>
                 </fieldset>
-                <p class="specifications">Separate each person with a comma and couples must contain the word "and" in the middle of the names</p>
+                <p class="specifications">
+                    Separate each person with a comma and couples must contain the word "and" in the middle of the names.
+                    <br> <span id="participants-number">Number of participants: 0</span>
+                </p>
 
                 <fieldset class="groups-number">
-                    <legend>Groups Number</legend>
-                    <input type="number" class="groups-number-input">
+                    <legend>
+                        <label for="groups-number-input">Number of Groups</label>
+                        <label for="groups-number-input"># Groups</label>
+                    </legend>
+                    <input type="number" id="groups-number-input">
                 </fieldset>
             </div>
         </div>
