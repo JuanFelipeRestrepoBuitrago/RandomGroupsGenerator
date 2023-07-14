@@ -8,8 +8,7 @@
     --primary-color-hover: #a4603d;
     --secondary-color: #0E1C36;
     --secondary-color-hover: #243150;
-    --input-placeholder: #4c4e62;
-    --sm-xl: 12px;
+    --xs: 12px;
     --sm: 14px;
     --md: 18px;
     --lg: 22px;
@@ -44,7 +43,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 8px 52px;
-    height: 60px;
+    height: 76px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -155,7 +154,7 @@ a {
     padding: 10px 16px 10px 4px;
     border-radius: 4px;
     color: var(--light);
-    font-size: var(--sm-xl);
+    font-size: var(--xs);
     font-weight: bold;
     cursor: pointer;
 }
@@ -165,7 +164,7 @@ a {
 }
 
 .main {
-    margin: 60px 0 0 0;
+    margin: 76px 0 0 0;
     width: 100%;
     height: auto;
     display: flex;
@@ -175,7 +174,7 @@ a {
 }
 
 .container {
-    width: 576px;
+    width: 728px;
     margin: 32px 16px;
     display: flex;
     flex-direction: column;
@@ -249,15 +248,19 @@ a {
 }
 
 #add-participants::placeholder {
-    color: var(--input-placeholder);
+    color: var(--black-hover);
+}
+
+.participants:focus-within {
+    border-color: var(--light-hover);
 }
 
 .specifications {
-    margin-top: 8px;
+    margin-top: 16px;
     width: 100%;
     text-align: start;
     font-size: var(--sm);
-    color: var(--black);
+    color: var(--black-hover);
 }
 
 @media (max-width: 768px) {
@@ -284,6 +287,10 @@ a {
         display: block;
         text-align: center;
     }
+
+    #add-participants {
+        font-size: var(--sm);
+    }
 }
 
 @media (max-width: 576px) {
@@ -309,7 +316,6 @@ a {
     .language > .dropdown-link span {
         display: none;
     }
-
 }
 
 
