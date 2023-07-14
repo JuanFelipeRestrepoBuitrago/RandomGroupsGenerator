@@ -4,8 +4,8 @@
     --black-hover: #424242;
     --light: #FFEDE1;
     --light-hover: #d2b8a8;
-    --primary-color: #C57B57;
-    --primary-color-hover: #a4603d;
+    --primary-color: #ff8e55;
+    --primary-color-hover: #985534;
     --secondary-color: #0E1C36;
     --secondary-color-hover: #243150;
     --xs: 12px;
@@ -263,8 +263,9 @@ a {
     color: var(--black-hover);
 }
 
-.specifications > span {
+#participants-number {
     color: var(--black);
+    margin-top: 8px;
 }
 
 .groups-number {
@@ -359,7 +360,15 @@ a {
     }
     .language {
         margin: 0;
+        display: flex;
+        align-items: center;
     }
+
+    .language > .dropdown-link {
+        padding: 0 6px;
+        height: 44px;
+    }
+
     .language > .dropdown-link span {
         display: none;
     }
