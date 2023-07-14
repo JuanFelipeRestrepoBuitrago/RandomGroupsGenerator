@@ -8,7 +8,7 @@
     --primary-color-hover: #a4603d;
     --secondary-color: #0E1C36;
     --secondary-color-hover: #243150;
-    --input-placeholder: #ADA4A4;
+    --input-placeholder: #4c4e62;
     --sm-xl: 12px;
     --sm: 14px;
     --md: 18px;
@@ -125,6 +125,7 @@ a {
     color: var(--light-hover);
 }
 
+/* TODO create javascript to make dropdown content appear */
 .dropdown-content {
     display: flex;
     flex-direction: column;
@@ -174,11 +175,11 @@ a {
 }
 
 .container {
-    margin-top: 32px;
-    width: 100%;
-    max-width: 576px;
-    padding: 0 16px;
-    box-sizing: border-box;
+    width: 576px;
+    margin: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .text-container {
@@ -186,7 +187,10 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    margin: 20px 16px;
+    margin: 20px 0;
+    padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .text-container > h1 {
@@ -205,9 +209,67 @@ a {
     display: none;
 }
 
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.participants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12px 8px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--light);
+    background-color: var(--primary-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.participants legend {
+    color: var(--black);
+    font-size: var(--sm);
+    margin-bottom: 8px;
+}
+
+/* TODO make javascript in order to get a self-sizing textarea */
+#add-participants {
+    color: var(--black);
+    font-size: var(--md);
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: text;
+    resize: none;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+#add-participants::placeholder {
+    color: var(--input-placeholder);
+}
+
+.specifications {
+    margin-top: 8px;
+    width: 100%;
+    text-align: start;
+    font-size: var(--sm);
+    color: var(--black);
+}
+
 @media (max-width: 768px) {
     .logo-p {
         font-size: var(--md);
+    }
+
+    .container {
+        margin: 32px 0;
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
 
     .text-container > h1 {
