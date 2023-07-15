@@ -88,7 +88,7 @@ export class RandomGroupGenerator {
         // For each person in the people array
         for (let person of people) {
             // If the person is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-            if (/\s(y|and)\s/.test(person)) {
+            if (/[a-zA-z]+\s(y|and)\s[a-zA-Z]+/.test(person)) {
                 counter += 2;
             } else {
                 counter ++;
@@ -175,5 +175,3 @@ export class RandomGroupGenerator {
         return this.groups;
     }
 }
-
-test();

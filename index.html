@@ -29,7 +29,7 @@
         <div class="dropdown-content hidden">
             <label for="change-language" class="text">Cambiar Idioma</label>
             <select id="change-language" name="change-language" class="dropdown-item">
-                <option class="language-item" value="en">Inglés</option>
+                <option class="language-item" value="en">English</option>
                 <option class="language-item" value="es" selected>Español</option>
             </select>
         </div>
@@ -49,11 +49,11 @@
                 <legend>
                     <label for="add-participants">Participantes</label>
                 </legend>
-                <textarea name="add-participants" id="add-participants" cols="45" rows="2" placeholder="Escribe los participantes. Ej: Pepito, Fulanito y Fulanita,..., Perano"></textarea>
+                <textarea name="add-participants" id="add-participants" cols="45" rows="2" placeholder="Escribe los participantes. Ejemplo: Pepito, Fulanito y Fulanita,..., Perano"></textarea>
             </fieldset>
             <p class="specifications">Separa cada persona con una copa y las parejas deben contener la letra "y" en el medio.</p>
 
-            <p id="participants-number" class="specifications">Número de Participantes: 0</p>
+            <p id="participants-number" class="specifications">Número de Participantes: <span>0</span></p>
 
             <fieldset class="groups-number">
                 <legend>
@@ -112,5 +112,6 @@
 
 <!-- Scripts Link -->
 <script src="./script.js" type="module"></script>
+<script src="./generator.js" type="module"></script>
 </body>
 </html>
