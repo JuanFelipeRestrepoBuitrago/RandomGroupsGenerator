@@ -311,6 +311,7 @@ a {
     margin-top: 8px;
     width: 728px;
     box-sizing: border-box;
+    margin-bottom: 40px;
 }
 
 .btn {
@@ -333,7 +334,6 @@ a {
     grid-template-columns: repeat(auto-fill, 240px);
     grid-gap: 16px;
     place-content: center;
-    margin-top: 40px;
     height: auto;
     width: 728px;
     box-sizing: border-box;
