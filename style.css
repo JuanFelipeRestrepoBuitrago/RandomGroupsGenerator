@@ -310,6 +310,7 @@ a {
     justify-content: center;
     margin-top: 8px;
     width: 728px;
+    box-sizing: border-box;
 }
 
 .btn {
@@ -415,12 +416,12 @@ a {
 
 .form-item label {
     color: var(--light);
-    font-size: var(--sm);
+    font-size: var(--md);
 }
 
 .form-item input {
     color: var(--light);
-    font-size: var(--sm);
+    font-size: var(--md);
     background-color: var(--secondary-color);
     border: none;
     outline: none;
@@ -453,7 +454,7 @@ a {
 #message {
     background-color: var(--secondary-color);
     color: var(--light);
-    font-size: var(--sm);
+    font-size: var(--md);
     padding: 8px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -578,6 +579,18 @@ a {
 
     .btn {
         padding: 12px 24px;
+        font-size: var(--sm);
+    }
+
+    .form-item label {
+        font-size: var(--sm);
+    }
+
+    .form-item input {
+        font-size: var(--sm);
+    }
+
+    #message {
         font-size: var(--sm);
     }
 
