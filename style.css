@@ -374,6 +374,43 @@ a {
     font-size: var(--md);
 }
 
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.footer hr {
+    width: 100%;
+    border: 1px solid var(--light);
+}
+
+.copyrigth {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 24px;
+}
+
+.copyrigth p {
+    color: var(--light);
+    font-size: var(--sm);
+}
+
+.copyrigth p a {
+    color: var(--light);
+    font-size: var(--sm);
+    text-decoration: none;
+}
+
+.copyrigth p a:hover {
+    text-decoration: underline;
+    color: var(--light-hover);
+}
+
 @media (max-width: 768px) {
     .logo-p {
         font-size: var(--md);
