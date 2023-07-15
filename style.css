@@ -309,7 +309,7 @@ a {
     display: flex;
     justify-content: center;
     margin-top: 8px;
-    width: 768px;
+    width: 728px;
 }
 
 .btn {
@@ -334,7 +334,7 @@ a {
     place-content: center;
     margin-top: 40px;
     height: auto;
-    width: 768px;
+    width: 728px;
     box-sizing: border-box;
 }
 
@@ -383,30 +383,120 @@ a {
     background-color: var(--secondary-color);
 }
 
-.footer hr {
-    width: 100%;
-    border: 1px solid var(--light);
+.footer-title {
+    color: var(--light);
+    font-size: var(--xl);
+    font-weight: bold;
+    margin-top: 16px;
 }
 
-.copyrigth {
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 24px;
+.footer form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-top: 16px;
+    width: 768px;
+    place-content: center;
 }
 
-.copyrigth p {
+.form-left {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 12px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+}
+
+.form-item label {
     color: var(--light);
     font-size: var(--sm);
 }
 
-.copyrigth p a {
+.form-item input {
+    color: var(--light);
+    font-size: var(--sm);
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--light);
+    width: 80%;
+    padding: 6px 4px;
+}
+
+.form-item input::placeholder {
+    color: var(--light-hover);
+}
+
+.form-item input:focus {
+    border-color: var(--light-hover);
+    background-color: var(--secondary-color-hover);
+}
+
+.btn-submit {
+    background-color: var(--secondary-color);
+    color: var(--light);
+    font-size: var(--md);
+    font-weight: bold;
+    padding: 16px 28px;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    cursor: pointer;
+    margin: auto auto;
+}
+
+#message {
+    background-color: var(--secondary-color);
+    color: var(--light);
+    font-size: var(--sm);
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid var(--light);
+}
+
+#message::placeholder {
+    color: var(--light-hover);
+}
+
+#message:focus {
+    border-color: var(--light-hover);
+    background-color: var(--secondary-color-hover);
+}
+
+.footer hr {
+    margin-top: 32px;
+    width: 100%;
+    border: 1px solid var(--light);
+    box-sizing: border-box;
+}
+
+.copyright {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.copyright p {
+    color: var(--light);
+    font-size: var(--sm);
+}
+
+.copyright p a {
     color: var(--light);
     font-size: var(--sm);
     text-decoration: none;
 }
 
-.copyrigth p a:hover {
+.copyright p a:hover {
     text-decoration: underline;
     color: var(--light-hover);
 }
@@ -457,6 +547,16 @@ a {
     .members {
         font-size: var(--sm);
     }
+
+    .footer {
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .footer form {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -478,6 +578,11 @@ a {
 
     .btn {
         padding: 12px 24px;
+        font-size: var(--sm);
+    }
+
+    .btn-submit {
+        padding: 12px 20px;
         font-size: var(--sm);
     }
 }
