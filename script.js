@@ -16,5 +16,8 @@ document.addEventListener('click', function(event) {
 
 changeLanguage.addEventListener('change', function(event) {
     console.log(event.target.value);
+    if (event.target.value === 'es') {
+        window.location.href = '../';
+    }
 });
 dropdownLink.addEventListener('click',  toggleDropdown.bind(null, dropdownContent));
