@@ -128,7 +128,6 @@ a {
     color: var(--light-hover);
 }
 
-/* TODO create javascript to make dropdown content appear */
 .dropdown-content {
     display: flex;
     flex-direction: column;
@@ -239,7 +238,6 @@ a {
     font-size: var(--sm);
 }
 
-/* TODO make javascript in order to get a self-sizing textarea */
 #add-participants {
     color: var(--black);
     font-size: var(--md);
