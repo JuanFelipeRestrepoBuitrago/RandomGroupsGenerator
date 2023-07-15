@@ -19,6 +19,9 @@ const groupsNumberInput = document.querySelector('#groups-number-input');
 // It takes the generate button element with the class btn-generate
 const generateButton = document.querySelector('.btn-generate');
 
+// It takes the groups container element with the class groups-container
+const groupsContainer = document.querySelector('.groups-container');
+
 function toggleDropdown(element) {
     /**
      * Function to toggle the hidden class of an element
@@ -76,6 +79,40 @@ function countParticipants() {
     return String(counter);
 }
 
+// <div className="group">
+//     <h1>Group 1:</h1>
+//     <ul className="members">
+//         <li className="member">Andrés Carrero y Tatiana Cuartas</li>
+//         <li className="member">Fulanito</li>
+//         <li className="member">Fulanita</li>
+//     </ul>
+// </div>
+function showGroups(groups) {
+    groupsContainer.innerHTML = '';
+    groups.forEach(function(group) {
+        const groupElement = document.createElement('div');
+        groupElement.classList.add('group');
+
+        const groupTitle = document.createElement('h1');
+        groupTitle.innerHTML = `Group ${groups.indexOf(group) + 1}:`;
+        groupElement.appendChild(groupTitle);
+
+        const groupMembers = document.createElement('ul');
+        groupMembers.classList.add('members');
+
+        group.forEach(function(member) {
+            const memberElement = document.createElement('li');
+            memberElement.classList.add('member');
+            memberElement.innerHTML = member;
+            groupMembers.appendChild(memberElement);
+        });
+
+        groupElement.appendChild(groupMembers);
+
+        groupsContainer.appendChild(groupElement);
+    });
+}
+
 function generateGroups() {
     /**
      * Function to generate the groups
@@ -106,7 +143,9 @@ function generateGroups() {
 
     // It generates the groups
     const groups = randomGroupGenerator.generateGroups();
-    console.log(groups);
+
+    // It shows the groups
+    showGroups(groups);
 
 }
 
