@@ -212,7 +212,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
     width: 100%;
 }
 
@@ -304,6 +304,28 @@ a {
     width: 100%;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    width: 768px;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--light);
+    font-size: var(--md);
+    font-weight: bold;
+    padding: 16px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color-hover);
+}
+
 @media (max-width: 768px) {
     .logo-p {
         font-size: var(--md);
@@ -331,6 +353,11 @@ a {
 
     #add-participants {
         font-size: var(--sm);
+    }
+
+    .btn-container {
+        width: 100%;
+        padding: 0 16px;
     }
 }
 
