@@ -164,13 +164,14 @@ a {
 }
 
 .main {
-    margin: 76px 0 0 0;
+    margin: 76px 0;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 .container {
@@ -326,6 +327,53 @@ a {
     background-color: var(--secondary-color-hover);
 }
 
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    grid-gap: 16px;
+    place-content: center;
+    margin-top: 40px;
+    height: auto;
+    width: 768px;
+    box-sizing: border-box;
+}
+
+.group {
+    height: auto;
+    width: 240px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid var(--light);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.group > h1 {
+    color: var(--black);
+    font-size: var(--lg);
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.members {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+    list-style-position: inside;
+    list-style-type: square;
+    padding: 0 0 0 8px;
+}
+
+.member {
+    color: var(--black);
+    font-size: var(--md);
+}
+
 @media (max-width: 768px) {
     .logo-p {
         font-size: var(--md);
@@ -359,6 +407,19 @@ a {
         width: 100%;
         padding: 0 16px;
     }
+
+    .groups-container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .group > h1 {
+        font-size: var(--md);
+    }
+
+    .members {
+        font-size: var(--sm);
+    }
 }
 
 @media (max-width: 576px) {
@@ -376,6 +437,11 @@ a {
 
     .groups-number legend label:nth-child(2) {
         display: block;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: var(--sm);
     }
 }
 
