@@ -66,7 +66,7 @@ function countParticipants() {
     // For each participant in the array of participants
     array.forEach(function(participant) {
         // If the participant is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-        if (/[a-zA-z]+(\s[a-zA-z]+)*\s(y|and)\s[a-zA-z]+(\s[a-zA-z]+)*/.test(String(participant))) {
+        if (/[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*/.test(String(participant))) {
             counter += 2;
         } else if (participant.match(/[a-zA-z]+(\s[a-zA-z]+)*/)) {
             counter ++;

@@ -4,23 +4,6 @@
  * @author Juan Felipe Restrepo Buitrago
  * */
 
-// Test
-function test() {
-    let group = new RandomGroupGenerator(3);
-    group.addPerson("Bob and Alice");
-    group.addPerson("John and Jane");
-    group.addPerson("Jack and Jill");
-    group.addPerson("Bob and Alice");
-    group.addPerson("John");
-    group.addPerson("Jane");
-    group.addPerson("Jack");
-
-    console.log(group.generateGroups());
-    for (let i = 0; i < group.groups.length; i++) {
-        console.log("Group " + String(i + 1)+ ": " + group.countPeople(group.groups[i]));
-    }
-}
-
 /**
  * Class to generate random groups of people from an array of people
  *
@@ -88,7 +71,7 @@ export class RandomGroupGenerator {
         // For each person in the people array
         for (let person of people) {
             // If the person is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-            if (/[a-zA-z]+\s(y|and)\s[a-zA-Z]+/.test(person)) {
+            if (/[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person)) {
                 counter += 2;
             } else {
                 counter ++;
@@ -117,10 +100,10 @@ export class RandomGroupGenerator {
         }
 
         // Filter by couples
-        let couples = this.people.filter(person => /\s(y|and)\s/.test(person));
+        let couples = this.people.filter(person => /[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person));
 
         // Filter by single people
-        let singlePeople = this.people.filter(person => !/\s(y|and)\s/.test(person));
+        let singlePeople = this.people.filter(person => !/[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person));
 
         // Add the couples to the groups
         let counter = 0;
