@@ -1,6 +1,11 @@
 # Random Groups
 This project is a web page to generate random groups with a list of participants given by the user. It's aimed at people who belongs to Neocatechumenal Way. It's designed for generating random groups for "Word Preparation".
 
+### Website
+
+[![](https://img.shields.io/badge/Spanish-yellow?label=Website)](https://juanfeliperestrepobuitrago.github.io/RandomGroupsGenerator/)
+[![](https://img.shields.io/badge/English-blue?label=Website)](https://juanfeliperestrepobuitrago.github.io/RandomGroupsGenerator/english/)
+
 ### Designer
 - Juan Felipe Restrepo Buitrago
 
