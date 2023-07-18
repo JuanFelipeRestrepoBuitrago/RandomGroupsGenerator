@@ -58,6 +58,7 @@ export class RandomGroupGenerator {
     /**
      * Method to clean the people array from empty strings
      *
+     * @param {Array} array - The people array to clean
      * @returns {Array} - The people array cleaned
      */
     cleanPeople(array = undefined) {
@@ -73,10 +74,42 @@ export class RandomGroupGenerator {
         for (let person of array) {
             // The person must not be an empty string or a string with only spaces to be added to the new people array
             if (!/^\s*$/.test(person)) {
-                new_people.push(person);
+                new_people.push(person.trim());
             }
         }
 
+        // Return the new people array
+        return new_people;
+    }
+
+    /**
+     * Method to randomize the people array
+     *
+     * @param {Array} array - The people array to randomize
+     * @returns {Array} - The people array randomized
+     * */
+    randomizePeople(array = undefined) {
+        // If the array parameter is not specified, then assign the people property to the array parameter
+        if (!array) {
+            array = this.people;
+        }
+
+        // Clean the people array
+        array = this.cleanPeople(array);
+
+        // New people array
+        const new_people = [];
+
+        // While there are people left in the people array
+        while (array.length > 0) {
+            // Get a random index from the people array
+            const random_index = Math.floor(Math.random() * array.length);
+            // Add the person at the random index to the new people array
+            new_people.push(array[random_index]);
+            // Remove the person at the random index from the people array
+            array.splice(random_index, 1);
+        }
+        
         // Return the new people array
         return new_people;
     }
@@ -97,7 +130,7 @@ export class RandomGroupGenerator {
         // For each person in the people array
         for (let person of people) {
             // If the person is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-            if (/[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person)) {
+            if (/^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person)) {
                 counter += 2;
             } else {
                 counter ++;
@@ -116,7 +149,7 @@ export class RandomGroupGenerator {
      */
     generateGroups(groupsSize = undefined) {
         // Clean the people array
-        this.people = this.cleanPeople();
+        this.people = this.randomizePeople();
 
         // Gets the number of people for each group, if the groupsSize parameter is not specified, then it gets the groupsSize property
         // if the groupsSize property is not specified, then it gets the number of people divided by the number of groups
@@ -129,10 +162,10 @@ export class RandomGroupGenerator {
         }
 
         // Filter by couples
-        let couples = this.people.filter(person => /[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person));
+        let couples = this.people.filter(person => /^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person));
 
         // Filter by single people
-        let singlePeople = this.people.filter(person => !/[a-zA-z]+\s(y|and|e)\s[a-zA-Z]+/.test(person));
+        let singlePeople = this.people.filter(person => !/^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person));
 
         // Add the couples to the groups
         let counter = 0;
