@@ -56,6 +56,32 @@ export class RandomGroupGenerator {
     }
 
     /**
+     * Method to clean the people array from empty strings
+     *
+     * @returns {Array} - The people array cleaned
+     */
+    cleanPeople(array = undefined) {
+        // If the array parameter is not specified, then assign the people property to the array parameter
+        if (!array) {
+            array = this.people;
+        }
+
+        // New people array
+        const new_people = [];
+
+        // For each person in the people array, if the person is not an empty string, then add it to the new people array
+        for (let person of array) {
+            // The person must not be an empty string or a string with only spaces to be added to the new people array
+            if (!/^\s*$/.test(person)) {
+                new_people.push(person);
+            }
+        }
+
+        // Return the new people array
+        return new_people;
+    }
+
+    /**
      * Method to count the number of people in the people array
      * @param people - The people array to count the number of people from
      * @default people = undefined
@@ -89,6 +115,9 @@ export class RandomGroupGenerator {
      * @returns {Array} - The array of groups generated
      */
     generateGroups(groupsSize = undefined) {
+        // Clean the people array
+        this.people = this.cleanPeople();
+
         // Gets the number of people for each group, if the groupsSize parameter is not specified, then it gets the groupsSize property
         // if the groupsSize property is not specified, then it gets the number of people divided by the number of groups
         if (!groupsSize) {
