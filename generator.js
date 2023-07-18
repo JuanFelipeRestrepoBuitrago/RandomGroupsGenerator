@@ -109,7 +109,7 @@ export class RandomGroupGenerator {
             // Remove the person at the random index from the people array
             array.splice(random_index, 1);
         }
-        
+
         // Return the new people array
         return new_people;
     }
