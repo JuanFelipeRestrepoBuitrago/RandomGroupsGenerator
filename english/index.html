@@ -13,6 +13,8 @@
     <title>Random Group Generator - Preparation Groups</title>
     <!-- Styles Link -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/e4712713f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -40,11 +42,29 @@
         <div class="container">
             <div class="text-container">
                 <h1>Generate Random Groups</h1>
-                <p class="desktop-p">This is a random group generator. It was created specially for Neocatechumenal Way people in order to distribute the preparation groups. Write the list of participants and the number of groups to generate</p>
+                <p class="desktop-p">This is a random group generator. It was created specially for Neocatechumenal Way people in order to distribute the preparation groups. Write the list of participants and the number of groups to generate.</p>
                 <p class="mobile-p">Create random groups</p>
             </div>
 
             <div class="content-container">
+                <div id="no-leaders">
+                    <p>Leaders</p>
+                    <button id="add-leaders"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="leaders-container inactive">
+                    <fieldset class="leaders">
+                        <legend>
+                            <label for="leaders">Leaders</label>
+                        </legend>
+                        <textarea name="add-leaders" id="leaders" cols="45" rows="2" placeholder="Type leaders. Example: Pepito, Fulanito, Fulanita,..., Perano"></textarea>
+                        <button id="remove-leaders"><i class="fa-solid fa-minus"></i></button>
+                    </fieldset>
+
+                    <p class="specifications">Separate each leader with a comma. There should not be any couple in here.</p>
+                    <p id="leaders-number" class="specifications">Number of Leaders: <span>0</span>.</p>
+
+                </div>
+
                 <fieldset class="participants">
                     <legend>
                         <label for="add-participants">Participants</label>
@@ -53,7 +73,7 @@
                 </fieldset>
                 <p class="specifications">Separate each person with a comma and couples must contain the word "and" in the middle of the names.</p>
 
-                <p id="participants-number" class="specifications">Number of participants: <span>0</span></p>
+                <p id="participants-number" class="specifications">Number of participants: <span>0</span>.</p>
 
                 <fieldset class="groups-number">
                     <legend>
