@@ -41,6 +41,10 @@ a {
     cursor: default;
 }
 
+.inactive {
+    display: none !important;
+}
+
 .navbar {
     background-color: var(--secondary-color);
     border-bottom: 1px solid var(--light);
@@ -240,7 +244,7 @@ a {
 
 #no-leaders button {
     color: var(--black);
-    font-size: var(--md);
+    font-size: var(--lg);
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
@@ -253,6 +257,73 @@ a {
 #no-leaders button i {
     color: var(--black);
     font-size: var(--lg);
+}
+
+.leaders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+}
+
+.leaders {
+    border: 2px solid var(--light);
+    border-radius: 8px;
+    padding: 0 12px 6px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leaders:focus-within {
+    border-color: var(--light-hover);
+}
+
+.leaders legend {
+    color: var(--black);
+    margin-bottom: 4px;
+    font-size: var(--sm);
+}
+
+#leaders {
+    color: var(--black);
+    font-size: var(--md);
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: text;
+    resize: none;
+    overflow-y: hidden;
+    width: 100%;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+#leaders::placeholder {
+    color: var(--black-hover);
+}
+
+.leaders button {
+    color: var(--black);
+    font-size: var(--md);
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.leaders button i {
+    color: var(--black);
+    font-size: var(--lg);
+}
+
+.leaders button:hover i {
+    color: var(--black-hover);
 }
 
 .participants {
@@ -564,6 +635,10 @@ a {
         text-align: center;
     }
 
+    #leaders {
+        font-size: var(--sm);
+    }
+
     #add-participants {
         font-size: var(--sm);
     }
@@ -611,7 +686,11 @@ a {
     }
 
     #no-leaders button i{
-        font-size: var(--sm);
+        font-size: var(--md);
+    }
+
+    .leaders button i{
+        font-size: var(--md);
     }
 
     .groups-number legend label:nth-child(1) {

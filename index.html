@@ -48,15 +48,22 @@
 
         <div class="content-container">
             <div id="no-leaders">
-                <p>Leaders</p>
-                <button id="add-leaders"><i class="fa-regular fa-plus"></i></button>
+                <p>Líderes </p>
+                <button id="add-leaders"><i class="fa-solid fa-plus"></i></button>
             </div>
-            <fieldset class="leaders">
-                <legend>
-                    <label for="leaders">Líderes</label>
-                </legend>
-                <textarea name="add-leaders" id="leaders" cols="45" rows="2" placeholder="Escribe los líderes. Ejemplo: Pepito, Fulanito, Fulanita,..., Perano"></textarea>
-            </fieldset>
+            <div class="leaders-container inactive">
+                <fieldset class="leaders">
+                    <legend>
+                        <label for="leaders">Líderes</label>
+                    </legend>
+                    <textarea name="add-leaders" id="leaders" cols="45" rows="2" placeholder="Escribe los líderes. Ejemplo: Pepito, Fulanito, Fulanita,..., Perano"></textarea>
+                    <button id="remove-leaders"><i class="fa-solid fa-minus"></i></button>
+                </fieldset>
+
+                <p class="specifications">Separa cada persona con una coma</p>
+                <p id="leaders-number" class="specifications">Número de Líderes: <span>0</span></p>
+
+            </div>
 
             <fieldset class="participants">
                 <legend>
