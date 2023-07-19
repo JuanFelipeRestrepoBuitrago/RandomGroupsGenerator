@@ -220,6 +220,41 @@ a {
     width: 100%;
 }
 
+#no-leaders {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+    padding: 4px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+}
+
+#no-leaders p {
+    color: var(--black);
+    font-size: var(--md);
+}
+
+#no-leaders button {
+    color: var(--black);
+    font-size: var(--md);
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+#no-leaders button:hover i {
+    color: var(--black-hover);
+}
+
+#no-leaders button i {
+    color: var(--black);
+    font-size: var(--lg);
+}
+
 .participants {
     display: flex;
     flex-direction: column;
@@ -569,6 +604,14 @@ a {
 
     #change-language {
         padding: 5px 8px 5px 2px;
+    }
+
+    #no-leaders p{
+        font-size: var(--sm);
+    }
+
+    #no-leaders button i{
+        font-size: var(--sm);
     }
 
     .groups-number legend label:nth-child(1) {
