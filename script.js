@@ -76,13 +76,22 @@ function resizeTextArea(element) {
 function countLeaders() {
     /**
      * Function to count the number of leaders
+     *
+     * @returns {String} - The number of leaders
      */
     // It takes the value of the textarea element and splits it by commas
     const leaders = leadersTextArea.value.split(',');
 
-    // It returns the length of the leaders array as a string, because this text area should only have one leader per comma
-    return String(leaders.length);
+    // Counter variable
+    let counter = 0;
+    // For each leader in the array of leaders
+    leaders.forEach(function(leader) {
+        if (leader.match(/[a-zA-z]+(\s[a-zA-z]+)*/)) {
+            counter ++;
+        }
+    });
 
+    return String(counter);
 }
 
 function addLeader() {
@@ -147,20 +156,38 @@ function countParticipants() {
 //         <li className="member">Fulanita</li>
 //     </ul>
 // </div>
-function showGroups(groups) {
+function showGroups(groups, leaders) {
+    /**
+     * Function to show the groups
+     *
+     * @param {Array} groups - The array of groups
+     * @param {Array} leaders - The array of leaders
+     */
+    // It cleans the groups container
     groupsContainer.innerHTML = '';
-    groups.forEach(function(group) {
+
+    // For each group in the array of groups
+    for (let i = 0; i < groups.length; i++) {
         const groupElement = document.createElement('div');
         groupElement.classList.add('group');
 
         const groupTitle = document.createElement('h1');
-        groupTitle.innerHTML = `Group ${groups.indexOf(group) + 1}:`;
+        groupTitle.innerHTML = `Group ${i + 1}:`;
         groupElement.appendChild(groupTitle);
 
         const groupMembers = document.createElement('ul');
         groupMembers.classList.add('members');
 
-        group.forEach(function(member) {
+        // If the leaders container is active
+        if (!leadersContainer.classList.contains('inactive')) {
+            const leaderElement = document.createElement('li');
+            leaderElement.classList.add('member');
+            leaderElement.style.fontWeight = 'bold';
+            leaderElement.innerHTML = leaders[i];
+            groupMembers.appendChild(leaderElement);
+        }
+
+        groups[i].forEach(function(member) {
             const memberElement = document.createElement('li');
             memberElement.classList.add('member');
             memberElement.innerHTML = member;
@@ -170,7 +197,7 @@ function showGroups(groups) {
         groupElement.appendChild(groupMembers);
 
         groupsContainer.appendChild(groupElement);
-    });
+    }
 }
 
 function generateGroups() {
@@ -193,6 +220,13 @@ function generateGroups() {
             alert('The number of groups must be greater than 1');
         }
         return;
+    } else if (!leadersContainer.classList.contains("inactive") && Number(countLeaders()) !== numberOfGroupsI) {
+        if (document.documentElement.lang === 'es') {
+            alert('El número de líderes debe ser igual al número de grupos');
+        } else if (document.documentElement.lang === 'en') {
+            alert('The number of leaders must be equal to the number of groups');
+        }
+        return;
     }
 
     // It takes the value of the textarea element
@@ -204,8 +238,21 @@ function generateGroups() {
     // It generates the groups
     const groups = randomGroupGenerator.generateGroups();
 
+    // Declare and initialize the leaders groups
+    let leadersGroups = [];
+
+    // If the leaders container is active, then generate the leaders groups
+    if (!leadersContainer.classList.contains("inactive")) {
+        // It takes the value of the leaders textarea element
+        const leaders = leadersTextArea.value.split(',');
+        // It creates a new group generator for the leaders
+        const leadersGroupGenerator = new RandomGroupGenerator(numberOfGroupsI, leaders);
+        // It generates the leaders groups
+        leadersGroups = leadersGroupGenerator.generateGroups();
+    }
+
     // It shows the groups
-    showGroups(groups);
+    showGroups(groups, leadersGroups);
 
 }
 
