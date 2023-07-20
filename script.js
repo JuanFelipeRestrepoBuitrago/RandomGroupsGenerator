@@ -51,6 +51,10 @@ function toggleLeaders() {
     leadersContainer.classList.toggle('inactive');
     // Toggle the inactive class of the no leaders container
     noLeadersContainer.classList.toggle('inactive');
+    if (!leadersContainer.classList.contains('inactive')) {
+        // Focus the leaders textarea element
+        leadersTextArea.focus();
+    }
 
 }
 
@@ -58,7 +62,6 @@ function resizeTextAreas() {
     /**
      * Function to resize the textarea elements
      * */
-    console.log('Resizing text areas');
     resizeTextArea(leadersTextArea);
     resizeTextArea(addParticipantsTextArea);
 }
