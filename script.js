@@ -5,11 +5,20 @@ import {RandomGroupGenerator} from "./generator.js";
 const dropdown = document.querySelector('.dropdown');
 // Div element with the class dropdown-content
 const dropdownContent = document.querySelector('.dropdown-content');
-// A element with the class dropdown-link
+// An element with the class dropdown-link
 const dropdownLink = document.querySelector('.dropdown-link');
 
 // It takes the element that changes the language, which is the select element with the id change-language
 const changeLanguage = document.querySelector('#change-language');
+
+// It takes the no-leaders element with the id no-leaders
+const noLeadersContainer = document.querySelector('#no-leaders');
+// It takes the leaders element with the class leaders-container
+const leadersContainer = document.querySelector('.leaders-container');
+// Takes the add-leaders element with the id add-leaders
+const addLeadersButton = document.querySelector('#add-leaders');
+// It takes the remove-leaders element with the id remove-leaders
+const removeLeadersButton = document.querySelector('#remove-leaders');
 
 // It takes the textarea element with the id leaders
 const leadersTextArea = document.querySelector('#leaders');
@@ -32,6 +41,17 @@ function toggleDropdown(element) {
      * @param {HTMLElement} element - The element to toggle the hidden class
      * */
     element.classList.toggle('hidden');
+}
+
+function toggleLeaders() {
+    /**
+     * Function to toggle the leaders container and the no leaders container
+     * */
+    // Toggle the inactive class of the leaders container
+    leadersContainer.classList.toggle('inactive');
+    // Toggle the inactive class of the no leaders container
+    noLeadersContainer.classList.toggle('inactive');
+
 }
 
 function resizeTextAreas() {
@@ -221,3 +241,8 @@ dropdownLink.addEventListener('click',  toggleDropdown.bind(null, dropdownConten
 
 // It adds an event listener to the generate button to generate the groups
 generateButton.addEventListener('click', generateGroups);
+
+// It adds an event listener to the addLeaderButton to show the leaders textarea element
+addLeadersButton.addEventListener('click', toggleLeaders);
+// It adds an event listener to the removeLeaderButton to hide the leaders textarea element
+removeLeadersButton.addEventListener('click', toggleLeaders);
