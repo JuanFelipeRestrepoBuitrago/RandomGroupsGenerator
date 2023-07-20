@@ -11,6 +11,9 @@ const dropdownLink = document.querySelector('.dropdown-link');
 // It takes the element that changes the language, which is the select element with the id change-language
 const changeLanguage = document.querySelector('#change-language');
 
+// It takes the textarea element with the id leaders
+const leadersTextArea = document.querySelector('#leaders');
+
 // It takes the textarea element with the id add-participants
 const addParticipantsTextArea = document.querySelector('#add-participants');
 // It takes the input element with the id groups-number-input
@@ -31,12 +34,49 @@ function toggleDropdown(element) {
     element.classList.toggle('hidden');
 }
 
-function resizeTextArea() {
+function resizeTextAreas() {
     /**
-     * Function to resize the participants textarea element when the user types more than one line
+     * Function to resize the textarea elements
      * */
-    addParticipantsTextArea.style.height = 'auto';
-    addParticipantsTextArea.style.height = addParticipantsTextArea.scrollHeight + 'px';
+    console.log('Resizing text areas');
+    resizeTextArea(leadersTextArea);
+    resizeTextArea(addParticipantsTextArea);
+}
+
+function resizeTextArea(element) {
+    /**
+     * Function to resize a textarea element when the user types more than one line
+     *
+     * @param {HTMLElement} element - The textarea element to resize
+     * */
+    element.style.height = 'auto';
+    element.style.height = element.scrollHeight + 'px';
+}
+
+function countLeaders() {
+    /**
+     * Function to count the number of leaders
+     */
+    // It takes the value of the textarea element and splits it by commas
+    const leaders = leadersTextArea.value.split(',');
+
+    // It returns the length of the leaders array as a string, because this text area should only have one leader per comma
+    return String(leaders.length);
+
+}
+
+function addLeader() {
+    /**
+     * Function to add a leader to the number of leaders
+     * */
+    // It takes the number of leaders
+    const numberOfLeaders = document.querySelector('#leaders-number span');
+
+    // Assign the counter to the number of leaders
+    numberOfLeaders.innerHTML = countLeaders();
+
+    // Resize the leaders textarea element
+    resizeTextArea(leadersTextArea);
 }
 
 function addParticipant() {
@@ -49,8 +89,8 @@ function addParticipant() {
     // Assign the counter to the number of participants
     numberOfParticipants.innerHTML = countParticipants();
 
-    // Resize the textarea element
-    resizeTextArea();
+    // Resize the participants textarea element
+    resizeTextArea(addParticipantsTextArea);
 }
 
 function countParticipants() {
@@ -170,7 +210,11 @@ changeLanguage.addEventListener('change', function(event) {
 // more than one line
 addParticipantsTextArea.addEventListener('input', addParticipant);
 // It adds an event listener to the window to change the height of the textarea element when the user resizes the window
-window.addEventListener('resize', resizeTextArea);
+window.addEventListener('resize', resizeTextAreas);
+
+// It adds an event listener to the add leaders textarea element to change its height when the user types
+// more than one line
+leadersTextArea.addEventListener('input', addLeader);
 
 // It adds an event listener to the dropdown link to toggle the dropdown content
 dropdownLink.addEventListener('click',  toggleDropdown.bind(null, dropdownContent));
