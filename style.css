@@ -377,6 +377,13 @@ a {
     margin-top: 8px;
 }
 
+.numbers-container {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    gap: 86px;
+}
+
 .groups-number {
     display: flex;
     flex-direction: column;
@@ -405,6 +412,15 @@ a {
 }
 
 #groups-number-input {
+    color: var(--black);
+    font-size: var(--md);
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+#peoplePerGroup {
     color: var(--black);
     font-size: var(--md);
     background-color: var(--primary-color);
@@ -691,6 +707,11 @@ a {
 
     .leaders button i{
         font-size: var(--md);
+    }
+
+    .numbers-container {
+        gap: 0;
+        justify-content: space-between;
     }
 
     .groups-number legend label:nth-child(1) {
