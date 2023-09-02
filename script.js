@@ -89,7 +89,7 @@ function countLeaders() {
     let counter = 0;
     // For each leader in the array of leaders
     leaders.forEach(function(leader) {
-        if (leader.match(/[a-zA-z]+(\s[a-zA-z]+)*/)) {
+        if (leader.match(/[a-zA-záéíóú]+(\s[a-zA-záéíóú]+)*/)) {
             counter ++;
         }
     });
@@ -141,9 +141,9 @@ function countParticipants() {
     // For each participant in the array of participants
     array.forEach(function(participant) {
         // If the participant is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-        if (/[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*/.test(String(participant))) {
+        if (/[a-zA-ZáéíóúÁÉÍÓÚ]+(\s[a-zA-ZáéíóúÁÉÍÓÚ]+)*\s(y|and|e)\s[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*/.test(String(participant))) {
             counter += 2;
-        } else if (participant.match(/[a-zA-z]+(\s[a-zA-z]+)*/)) {
+        } else if (participant.match(/[a-zA-ZáéíóúÁÉÍÓÚ]+(\s[a-zA-ZáéíóúÁÉÍÓÚ]+)*/)) {
             counter ++;
         }
     });

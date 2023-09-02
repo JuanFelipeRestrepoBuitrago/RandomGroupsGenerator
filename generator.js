@@ -130,7 +130,7 @@ export class RandomGroupGenerator {
         // For each person in the people array
         for (let person of people) {
             // If the person is a group of people (it has a 'y' or an 'and' in the middle), then add 2 to the counter, otherwise, add 1
-            if (/^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person)) {
+            if (/^[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*\s(y|and|e)\s[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*$/.test(person)) {
                 counter += 2;
             } else {
                 counter ++;
@@ -162,10 +162,10 @@ export class RandomGroupGenerator {
         }
 
         // Filter by couples
-        let couples = this.people.filter(person => /^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person));
+        let couples = this.people.filter(person => /^[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*\s(y|and|e)\s[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*$/.test(person));
 
         // Filter by single people
-        let singlePeople = this.people.filter(person => !/^[a-zA-z]+(\s[a-zA-z]+)*\s(y|and|e)\s[a-zA-z]+(\s[a-zA-z]+)*$/.test(person));
+        let singlePeople = this.people.filter(person => !/^[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*\s(y|and|e)\s[ÁÉÍÓÚáéíóúa-zA-Z]+(\s[ÁÉÍÓÚáéíóúa-zA-Z]+)*$/.test(person));
 
         // Add the couples to the groups
         let counter = 0;
